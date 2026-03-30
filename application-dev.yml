@@ -1,26 +1,5 @@
-spring:
-  application:
-    name: config-server
-  profiles:
-    active: git
-  cloud:
-    config:
-      server:
-        git:
-          uri: https://github.com/kavee137/ECA-Config-Repo.git
-          default-label: main
-          clone-on-start: true
 
 eureka:
   client:
     service-url:
       defaultZone: http://vm-node-a.platform:8888/eureka, http://vm-node-b.platform:8888/eureka , http://vm-node-c.platform:8888/eureka
-
-server:
-  port: 8888
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health,info
