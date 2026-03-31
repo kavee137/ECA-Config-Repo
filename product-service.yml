@@ -1,8 +1,13 @@
 server:
-  port: 8082
+  port: 0
+  forward-headers-strategy: framework
   error:
     include-message: always
     include-binding-errors: always
+
+eureka:
+  instance:
+    instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
 
 spring:
   application:
